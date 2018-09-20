@@ -1,1 +1,1 @@
-web: gunicorn fantasy_stats.app:app
+web gunicorn fantasy_stats.app:app
