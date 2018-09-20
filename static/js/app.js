@@ -7,10 +7,10 @@ function buildStats(playerName) {
   d3.json(url).then(function(response) {
     console.log(response);
     //display player name as text
-    d3.select("#player1")
-      .html('')
-      .append('p')
-      .text("Left: " + playerName);
+    // d3.select("#player1")
+    //   .html('')
+    //   .append('p')
+    //   .text("Left: " + playerName);
 
     // Graph 1 - Average Miscellaneous Stats
     //trace data
@@ -330,10 +330,10 @@ function buildStats2(playerName) {
   d3.json(url).then(function(response) {
     console.log(response);
     // plot1 xaxis = Year, yaxis = FTM per year
-    d3.select("#player2")
-      .html('')
-      .append('p')
-      .text("Right: " + playerName);
+    // d3.select("#player2")
+    //   .html('')
+    //   .append('p')
+    //   .text("Right: " + playerName);
 
     var trace9 = {
       x: ['Rebounds','Assists','Turnovers','Steals','Blocks','Personal Fouls','Points'],
@@ -647,15 +647,55 @@ function buildStats2(playerName) {
 
 // buildNews() function to pull News data and insert it into HTML page
 function buildNews(playerName) {
-  //set var url = '<flask_route>' + playerName
 
-  // d3.js to fetch news data for sample
-    // select the div id for where the news is going to go, set it to var news
+  var url = "/playernews/" + playerName;
+  // d3.js to fetch data for the plots
+  d3.json(url).then(function(response) {
+    console.log(response);
 
-    // clear html using news.html("")
+    //display player name header
+    d3.select("#player1")
+      .html("")
+      .append('p')
+      .text(playerName + " Info");
 
-    // use object.entries to insert the news
-};
+    //display player info
+    d3.select("#player1_info")
+      .html("")
+      .append('p').text(`Team: ${response.team}`)
+      .append('p').text("Age/DOB: " + response.age_dob)
+      .append('p').text("Height/Weight: " + response.ht_wt)
+      .append('p').text("College: " + response.college)
+      .append('p').text("Drafted: " + response.drafted);
+    });
+
+}
+
+//build news for second player
+function buildNews2(playerName) {
+
+  var url = "/playernews/" + playerName;
+  // d3.js to fetch data for the plots
+  d3.json(url).then(function(response) {
+    console.log(response);
+
+    //display player name header
+    d3.select("#player2")
+      .html("")
+      .append('p')
+      .text(playerName + " Info");
+
+    //display player info
+    d3.select("#player2_info")
+      .html("")
+      .append('p').text("Team: " + response.team)
+      .append('p').text("Age/DOB: " + response.age_dob)
+      .append('p').text("Height/Weight: " + response.ht_wt)
+      .append('p').text("College: " + response.college)
+      .append('p').text("Drafted: " + response.drafted);
+    });
+
+}
 
 function init() {
   // first set of stats
@@ -672,7 +712,7 @@ function init() {
   // use first player name on the list to build initial plots
   const firstPlayer = playerNames[0];
   buildStats(firstPlayer);
-
+  buildNews(firstPlayer);
   });
 
   // for the second set of stats
@@ -691,18 +731,18 @@ function init() {
   // use first player name on the list to build initial plots
   const secondPlayer = playerNames[0];
   buildStats2(secondPlayer);
-
+  buildNews2(secondPlayer);
   });
 };
 
 function optionChanged(newPlayer) {
   buildStats(newPlayer);
-  // bulidNews(newPlayer);
+  buildNews(newPlayer);
 };
 
 function optionChanged2(newPlayer) {
   buildStats2(newPlayer);
-  // bulidNews(newPlayer);
+  buildNews2(newPlayer);
 };
 
 init();

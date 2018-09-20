@@ -27,6 +27,7 @@ Base.prepare(db.engine, reflect=True)
 # Save references to each table
 NBATOP = Base.classes.nbatop
 NBANEWS = Base.classes.nbanews
+NBAPLAYERNEWS = Base.classes.nbaplayernews
 
 @app.route("/")
 def index():
@@ -90,7 +91,7 @@ def player_stats(playerName):
 
 @app.route("/news")
 def news_data():
-    """News"""
+    """Home Page News"""
     stmt = db.session.query(NBANEWS).statement
     df2 = pd.read_sql_query(stmt, db.session.bind)
 
@@ -101,6 +102,26 @@ def news_data():
         "players": df2['players'].values.tolist()
     }
     return jsonify(news_data)
+
+@app.route("/playernews/<playerName>")
+def player_news_data(playerName):
+    """Analysis Page News Per Player"""
+    stmt = db.session.query(NBAPLAYERNEWS).statement
+    df3 = pd.read_sql_query(stmt, db.session.bind)
+
+    player_data = df3.loc[df3["player"] == playerName, ['player', 'team', 'age_dob', 'ht_wt', 'college',
+        'drafted', 'contract']]
+
+    player_news_data = {
+        "name": player_data.player.values.tolist(),
+        "team": player_data.team.values.tolist(),
+        "age_dob": player_data.age_dob.values.tolist(),
+        "ht_wt": player_data.ht_wt.values.tolist(),
+        "college": player_data.college.values.tolist(),
+        "drafted": player_data.drafted.values.tolist(),
+        "contract": player_data.contract.values.tolist(),
+    }
+    return jsonify(player_news_data)
 
 if __name__ == "__main__":
     app.run(debug=True)
