@@ -656,17 +656,31 @@ function buildNews(playerName) {
     //display player name header
     d3.select("#player1")
       .html("")
-      .append('p')
-      .text(playerName + " Info");
+      .append('b')
+      .text(playerName + " ");
+
+    d3.select("#player1_headshot")
+      .html("")
+      .append('img').attr('src', response.headshot);
 
     //display player info
     d3.select("#player1_info")
       .html("")
+      .append('img').attr('src', response.headshot)
       .append('p').text(`Team: ${response.team}`)
       .append('p').text("Age/DOB: " + response.age_dob)
       .append('p').text("Height/Weight: " + response.ht_wt)
       .append('p').text("College: " + response.college)
       .append('p').text("Drafted: " + response.drafted);
+
+    d3.select("#player1_headline")
+      .html("")
+      .append('p').text(response.latest_news);
+
+    d3.select("#player1_news")
+      .html("")
+      .append('p').text(response.news_paragraph);
+
     });
 
 }
@@ -682,17 +696,30 @@ function buildNews2(playerName) {
     //display player name header
     d3.select("#player2")
       .html("")
-      .append('p')
-      .text(playerName + " Info");
+      .append('b')
+      .text(playerName + " ");
+
+    d3.select("#player2_headshot")
+      .html("")
+      .append('img').attr('src', response.headshot);
 
     //display player info
     d3.select("#player2_info")
       .html("")
+      // .append('img').attr('src', response.headshot)
       .append('p').text("Team: " + response.team)
       .append('p').text("Age/DOB: " + response.age_dob)
       .append('p').text("Height/Weight: " + response.ht_wt)
       .append('p').text("College: " + response.college)
       .append('p').text("Drafted: " + response.drafted);
+
+    d3.select("#player2_headline")
+      .html("")
+      .append('p').text(response.latest_news);
+
+    d3.select("#player2_news")
+      .html("")
+      .append('p').text(response.news_paragraph);
     });
 
 }

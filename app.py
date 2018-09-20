@@ -109,11 +109,14 @@ def player_news_data(playerName):
     stmt = db.session.query(NBAPLAYERNEWS).statement
     df3 = pd.read_sql_query(stmt, db.session.bind)
 
-    player_data = df3.loc[df3["player"] == playerName, ['player', 'team', 'age_dob', 'ht_wt', 'college',
-        'drafted', 'contract']]
+    player_data = df3.loc[df3["player"] == playerName, ['player', 'headshot', 'latestnews', 'newsparagraph',
+     'team', 'age_dob', 'ht_wt', 'college', 'drafted', 'contract']]
 
     player_news_data = {
         "name": player_data.player.values.tolist(),
+        "headshot": player_data.headshot.values.tolist(),
+        "latest_news": player_data.latestnews.values.tolist(),
+        "news_paragraph": player_data.newsparagraph.values.tolist(),
         "team": player_data.team.values.tolist(),
         "age_dob": player_data.age_dob.values.tolist(),
         "ht_wt": player_data.ht_wt.values.tolist(),
