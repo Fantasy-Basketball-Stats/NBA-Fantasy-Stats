@@ -666,8 +666,8 @@ function buildNews(playerName) {
     //display player info
     d3.select("#player1_info")
       .html("")
-      .append('img').attr('src', response.headshot)
-      .append('p').text(`Team: ${response.team}`)
+      // .append('img').attr('src', response.headshot)
+      .append('p').text("Team: " + response.team)
       .append('p').text("Age/DOB: " + response.age_dob)
       .append('p').text("Height/Weight: " + response.ht_wt)
       .append('p').text("College: " + response.college)
