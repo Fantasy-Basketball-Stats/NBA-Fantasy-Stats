@@ -1,0 +1,21 @@
+.jumbotron {
+    text-align: center;
+    background-color: rgba(3, 48, 100, 0.411);
+    min-height: 75px;
+  }
+
+  .footer {
+     border-top: 5px black;
+     /*border-top-color: black;*/
+     bottom: 0;
+     position: relative;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     background-color: grey;
+     color: white;
+     text-align: center;
+     height: 40px;
+     margin-top: 10px;
+
+   }

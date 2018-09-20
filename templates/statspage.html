@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- Required Meta -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!-- css link  -->
+        <link rel="stylesheet" href="style.css">
+
+        <title>NBA Fantasy Destroyer</title>
+
+    <title></title>
+  </head>
+  <!-- Navbar-Beginning -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="../templates/index.html">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <!-- <li class="nav-item active">
+            <a class="nav-link" href="http://www.nba.com/fantasy/">NBA Fantasy<span class="sr-only">(current)</span></a>
+      </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Fantasy Websites
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="http://www.espn.com/fantasy/basketball/">ESPN Fantasy</a>
+            <a class="dropdown-item" href="https://basketball.fantasysports.yahoo.com/">Yahoo fantasysports</a>
+            <a class="dropdown-item" href="https://www.cbssports.com/fantasy/games/basketball/">CBS Fantasy Basketball</a>
+            <a class="dropdown-item" href="http://www.rotoworld.com/sports/nba/basketball?ls=roto:nba:gnav">RotoWorld NBA</a>
+
+          </div>
+          </li>  -->
+
+
+      </div>
+</nav>
+<!-- end of nav bar -->
+
+<div class="container">
+          <div class="row">
+            <!-- jumbotron -->
+                        <div class="jumbotron">
+                                  <h1 class="display-4">NBA FANTASY DASHBOARD</h1>
+                                  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                                  <hr class="my-4">
+                                  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                                  <!-- <p class="lead">
+                                    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+                                  </p> -->
+                          </div>
+            <!-- end of jumbotron -->
+          </div>
+
+          <div class="row">
+                    <div class="col-md-4">
+                        <div class="well">
+                            <h4>Players Selected:</h4>
+                            <div id="player1"></div>
+                            <div id="player2"></div>
+                            <!-- <select id="selDataset" onchange="optionChanged(this.value)"></select> -->
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                      <h4>Player News</h4>
+                      <p>Player News Goes Here</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>{Player Images}</h4>
+                    </div>
+          </div>
+
+          <!-- start dropdowns -->
+          <div class="row">
+
+            <div class="col-md-6">
+              <div class="well">
+                <h5>Select First Player:</h5>
+                <select id="selDataset" onchange="optionChanged(this.value)"></select>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="well">
+                <h5>Select Second Player:</h5>
+                <select id="selDataset2" onchange="optionChanged2(this.value)"></select>
+              </div>
+            </div>
+
+          </div>
+          <!-- end dropdowns -->
+
+          <!-- start plotly charts -->
+          <div class="row">
+            <div class="col-md-6">
+              <div id="plot1a"></div>
+            </div>
+
+            <div class="col-md-6">
+              <div id="plot1b"></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div id="plot2a"></div>
+            </div>
+
+            <div class="col-md-6">
+              <div id="plot2b"></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div id="plot3a"></div>
+            </div>
+
+            <div class="col-md-6">
+              <div id="plot3b"></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div id="plot4a"></div>
+            </div>
+
+            <div class="col-md-6">
+              <div id="plot4b"></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div id="plot5a"></div>
+            </div>
+
+            <div class="col-md-6">
+              <div id="plot5b"></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div id="plot6a"></div>
+            </div>
+
+            <div class="col-md-6">
+              <div id="plot6b"></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div id="plot7a"></div>
+            </div>
+
+            <div class="col-md-6">
+              <div id="plot7b"></div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6">
+              <div id="plot8a"></div>
+            </div>
+
+            <div class="col-md-6">
+              <div id="plot8b"></div>
+            </div>
+          </div>
+
+          <!-- end plotly charts -->
+
+
+
+            <script type="text/javascript">
+            var db = openDatabase('pythonsqlite.db', '3.0',"test-DB",2 * 1024 * 1024);
+            </script>
+</div>
+        <!--footer  -->
+            <!-- <div class="footer">
+                  <p> @ Copyright NBA Fantasy Destroyer</p>
+            </div> -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+                    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+                    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+        <!-- End of my Body -->
+</body>
+</html
