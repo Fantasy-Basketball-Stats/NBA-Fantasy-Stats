@@ -148,3 +148,8 @@ h1{
   color: gray;
 }
 /* end slides.html */
+
+.card-img-top{
+  height: 300px;
+}
+
