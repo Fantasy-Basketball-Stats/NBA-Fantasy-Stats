@@ -109,3 +109,42 @@ h1{
 #title-format{
   text-align: center;
 }
+
+/* start slides.html */
+#slides{
+  color: grey;
+  background-color: grey !important;
+}
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  line-height: 1;
+  margin: auto;
+  width: 100%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  border: none;
+  background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: gray;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: gray;
+}
+/* end slides.html */

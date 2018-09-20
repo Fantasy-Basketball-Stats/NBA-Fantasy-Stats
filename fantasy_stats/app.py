@@ -39,6 +39,11 @@ def stats():
     """Returns the Stats page."""
     return render_template("statspage.html")
 
+@app.route("/slides")
+def slides():
+    """Returns the Slides page."""
+    return render_template("slides.html")
+
 @app.route("/names")
 def names():
     """Return a list of players' names."""
