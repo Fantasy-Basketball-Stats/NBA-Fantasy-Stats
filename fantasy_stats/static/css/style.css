@@ -109,3 +109,6 @@ h1{
 #title-format{
   text-align: center;
 }
+.card-img-top{
+  height: 300px;
+}
